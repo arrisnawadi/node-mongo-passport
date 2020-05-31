@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .container
+    .row.mt-5
+      .col.xl-12
+        h1.text-center= title
+    .row.mt-3
+      .col-xl-6.d-flex.justify-content-end
+        a.btn.btn-warning.btn-lg(href='/register' role='button' aria-pressed='true') Create Account
+      .col-xl-6.d-flex.justify-content-start
+        a.btn.btn-success.btn-lg(href='/login' role='button' aria-pressed='true') Login

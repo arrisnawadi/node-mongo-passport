@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .container
+    if sessionFlash && sessionFlash.message
+      div(class='alert alert-'+sessionFlash.type+' alert-dismissible fade show', role='alert')
+        strong #{ sessionFlash.message }
+        button.close(type='button', data-dismiss='alert', aria-label='Close')
+          span(aria-hidden='true') &times;
+
+    h3= title
+
+    a.btn.btn-danger(href='/logout' role='button' aria-pressed='true') Logout

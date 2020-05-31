@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-md-6.m-auto
+        .card.card-body
+          h3.text-center.mb-3= title
+
+          if errors 
+            for error in errors                    
+              .alert.alert-danger.alert-dismissible.fade.show(role='alert')
+                strong!= error.msg
+                button.close(type='button', data-dismiss='alert', aria-label='Close')
+                  span(aria-hidden='true') &times;
+
+          form(method='POST' action='')
+            .form-group
+              label(for='name') Full Name
+              input.form-control#name(type='text', name='name' placeholder='Enter full name')
+
+            .form-group
+              label(for='email') Email Address
+              input.form-control#email(type='email', name='email' placeholder='Enter email')
+                        
+            .form-group
+              label(for='password') Password
+              input.form-control#password(type='password', name='password' placeholder='Password')
+
+            .form-group
+              label(for='password2') Confirm Password
+              input.form-control#password2(type='password', name='password2' placeholder='Password')
+            
+            .form-group
+              label(for='level') Level
+              select.form-control(name='level')
+                option(value='member') Member
+                option(value='admin') Admin
+                
+            button.btn.btn-warning.btn-block(type='submit') Register
+                    
+            p.mt-4 Have an account? 
+              a(href='/login') Login
