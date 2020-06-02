@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "5ed34cdb9789a216f0476d90"
+  },
+  "level": "member",
+  "name": "Jaka",
+  "email": "member@gmail.com",
+  "password": "$2a$10$aIdF4nnC2XHtR5GoFw4eP.NBbFqoAeWu4o87SRWrg.qkPpp.9/33m",
+  "date": {
+    "$date": "2020-05-31T06:21:15.738Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5ed5d22761439f168cd4961b"
+  },
+  "level": "admin",
+  "name": "Aris",
+  "email": "admin@gmail.com",
+  "password": "$2a$10$/qrw0.WmdIDLiH0OxIIPre4I1M1YF75nKQLh3mpOnzjbYdLZm4YRe",
+  "date": {
+    "$date": "2020-06-02T06:30:59.691Z"
+  },
+  "__v": 0
+}]
