@@ -5,8 +5,8 @@ const router = express.Router()
 const { ensureAuthenticated, notAuthenticated } = require('./../config/auth')
 
 // import controller
-const registerController = require('../controllers/registerController')
-const loginController = require('../controllers/loginController')
+const registerController = require('./../controllers/registerController')
+const loginController = require('./../controllers/loginController')
 
 // Home Page
 router.get('/', notAuthenticated, (req, res) => {
@@ -22,13 +22,14 @@ router.get('/admin', ensureAuthenticated, (req, res) => {
     res.render('admin', {
       title: `Welcome ${req.user.level}`
     })
+  } else {
+    // redirect if level is not admin
+    req.session.sessionFlash = {
+      type: 'danger',
+      message: 'You don\'t have access!'
+    }
+    res.redirect('/member')
   }
-  // redirect if level is not admin
-  req.session.sessionFlash = {
-    type: 'danger',
-    message: 'You don\'t have access!'
-  }
-  res.redirect('/member')
 })
 
 // Member Page
@@ -38,13 +39,14 @@ router.get('/member', ensureAuthenticated, (req, res) => {
     res.render('member', {
       title: `Welcome ${req.user.level}`
     })
+  } else {
+    // redirect if level is not member
+    req.session.sessionFlash = {
+      type: 'danger',
+      message: 'You don\'t have access!'
+    }
+    res.redirect('/admin')
   }
-  // redirect if level is not member
-  req.session.sessionFlash = {
-    type: 'danger',
-    message: 'You don\'t have access!'
-  }
-  res.redirect('/admin')
 })
 
 // GET request to Register Page

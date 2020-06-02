@@ -19,11 +19,16 @@ exports.user_login_post = [
         }
         res.redirect('/login')
       }
+      if (user) {
+        req.logIn(user, function (err) {
+          if (err) {
+            return next(err)
+          } else {
+            return user.level === 'admin' ? res.redirect('/admin') : res.redirect('/member')
+          }
+        })
+      }
 
-      req.logIn(user, function (err) {
-        if (err) { return next(err) }
-        return user.level === 'admin' ? res.redirect('/admin') : res.redirect('/member')
-      })
     })(req, res, next)
   }
 ]

@@ -10,4 +10,30 @@ block content
           
     h3= title
 
+    button.btn.btn-info.mr-3(type='button' data-toggle='modal' data-target='#exampleModal') Change Password
+
+    .modal.fade#exampleModal(tabindex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            h5.modal-title#exampleModalLabel Change Password
+            button.close(type='button' data-dismiss='modal' aria-label='Close')
+              span(aria-hidden='true') &times;
+          .modal-body
+            form(method='POST' action='users/changePassword')
+              .form-group
+                label(for='name') Current Password
+                input.form-control#name(type='password', name='currPass' placeholder='current password')
+                          
+              .form-group
+                label(for='password') New Password
+                input.form-control#password(type='password', name='newPass' placeholder='new password')
+
+              .form-group
+                label(for='password2') Confirm New Password
+                input.form-control#password2(type='password', name='newPass2' placeholder='confirm new password')
+              .modal-footer
+                button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+                button.btn.btn-primary(type='submit') Save changes
+
     a.btn.btn-danger(href='/logout' role='button' aria-pressed='true') Logout
