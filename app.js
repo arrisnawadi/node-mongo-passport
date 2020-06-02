@@ -30,7 +30,7 @@ app.use(passport.session())
 
 // set up mongoose connection
 const devDbUrl =
-  'mongodb+srv://admin:admin@cluster0-oy4fy.mongodb.net/local_library?retryWrites=true&w=majority'
+  'mongodb+srv://<your_user_name>:<your_password>@cluster0-oy4fy.mongodb.net/<database>?retryWrites=true&w=majority'
 const mongoDB = process.env.MONGODB_URI || devDbUrl
 mongoose.connect(mongoDB, {
   useNewUrlParser: true,
