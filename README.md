@@ -12,7 +12,7 @@ On this website you will apply using [passportjs](http://www.passportjs.org/) to
 ## Installation
 You can clone this repository to your local computer and run command after you open it in your local terminal.
 ```
-npm install <package-name>
+npm install
 ```
 
 After that, import a table called dbUser. You can see the steps on [Mongo Import](https://docs.mongodb.com/manual/reference/program/mongoimport/).
